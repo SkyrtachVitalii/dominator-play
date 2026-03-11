@@ -24,24 +24,24 @@ export const UpcomingReleases = () => {
           <ReleaseTimerCard
             startDate={startDate}
             targetDate={targetDate}
-            bgImageUrl="/src/assets/game_bg_2.png"
+            bgImageUrl="/assets/game_bg_2.png"
           />
-          <GameCard imageUrl="/src/assets/game_bg_1.png" alt="Cowboy Canwaty" />
+          <GameCard imageUrl="/assets/game_bg_1.png" alt="Cowboy Canwaty" />
           <ReleaseTimerCard
             startDate={startDate}
             targetDate={targetDate}
-            bgImageUrl="/src/assets/game_bg_2.png"
+            bgImageUrl="/assets/game_bg_2.png"
           />
 
           <ReleaseTimerCard
             startDate={startDate}
             targetDate={targetDate}
-            bgImageUrl="/src/assets/game_bg_2.png"
+            bgImageUrl="/assets/game_bg_2.png"
           />
           <ReleaseTimerCard
             startDate={startDate}
             targetDate={targetDate}
-            bgImageUrl="/src/assets/game_bg_2.png"
+            bgImageUrl="/assets/game_bg_2.png"
           />
           <CtaCard />
         </div>

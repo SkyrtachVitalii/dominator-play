@@ -21,7 +21,7 @@ export const AccordionItem = ({ title, content }: AccordionItemProps) => {
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="text-snow leading-none ml-4 w-4.5 h-4.5 origin-center"
         >
-          <img src="/src/assets/icon_plus.svg" alt="" />
+          <img src="/assets/icon_plus.svg" alt="" />
         </motion.span>
       </button>
       

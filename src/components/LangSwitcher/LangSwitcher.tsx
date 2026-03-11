@@ -2,8 +2,8 @@
 import { useState, useRef, useEffect } from "react";
 import { cn } from "../../utils/cn";
 import { ChevronIcon } from "../Icons/ChevronIcon";
-import UK from "../../assets/uk.svg";
-import SPAIN from "../../assets/spain.svg";
+import UK from "/assets/uk.svg";
+import SPAIN from "/assets/spain.svg";
 
 const languages = [
   { code: "en", icon: UK, label: "EN" },
