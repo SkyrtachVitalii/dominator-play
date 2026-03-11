@@ -29,10 +29,10 @@ export const Footer = () => {
             
             <div className="flex items-center gap-4">
               <a href="#" className="hover:opacity-80 transition-opacity" aria-label="LinkedIn">
-                <img src="/public/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
+                <img src="/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
               </a>
               <a href="#" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
-                <img src="/public/instagram.svg" alt="Instagram" className="w-6 h-6" />
+                <img src="/instagram.svg" alt="Instagram" className="w-6 h-6" />
               </a>
             </div>
           </div>
