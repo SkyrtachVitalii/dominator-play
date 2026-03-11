@@ -16,8 +16,8 @@ export const Footer = () => {
           
           {/* Ліва колонка (Інформація про бренд) */}
           <div className="lg:col-span-5 col-span-4 flex flex-col items-start">
-            <img src="/public/logo-small-white.svg" alt="Dominator Play" className="mb-7 h-8 w-auto" />
-            <img src="/public/age.svg" alt="18+" className="mb-6 h-6 w-auto" />
+            <img src="/logo-small-white.svg" alt="Dominator Play" className="mb-7 h-8 w-auto" />
+            <img src="/age.svg" alt="18+" className="mb-6 h-6 w-auto" />
             
             <p className="typo-footer-link text-snow/80 mb-6! max-w-[280px]">
               Our website is intended for<br /> users aged 18 and over.
