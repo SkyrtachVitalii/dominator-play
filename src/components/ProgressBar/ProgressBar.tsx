@@ -13,7 +13,6 @@ export const ProgressBar = ({ startDate, targetDate }: ReleaseTimingProps) => {
       const total = target - start;
       const current = now - start;
       
-      // Обчислюємо відсоток від 0 до 100
       let percentage = (current / total) * 100;
       percentage = Math.min(100, Math.max(0, percentage));
       

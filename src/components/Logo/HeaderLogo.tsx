@@ -1,4 +1,3 @@
-// src/components/Logo/HeaderLogo.tsx
 import { cn } from '../../utils/cn';
 import styles from './HeaderLogo.module.scss';
 

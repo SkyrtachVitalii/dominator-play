@@ -1,4 +1,3 @@
-// src/components/MainMenu/MainMenu.tsx
 import { useState, useEffect } from "react";
 import { cn } from "../../utils/cn";
 import { ChevronIcon } from "../Icons/ChevronIcon";

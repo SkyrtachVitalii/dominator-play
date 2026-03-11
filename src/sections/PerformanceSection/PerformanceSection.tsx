@@ -1,10 +1,8 @@
-// src/components/PerformanceSection/PerformanceSection.tsx
 import { motion, type Variants } from "framer-motion";
 import { cn } from "../../utils/cn";
 import { FeatureCard } from "../../components/cards/FeatureCard/FeatureCard";
 import styles from "./PerformanceSection.module.scss";
 
-// Виносимо дані карток у масив
 const featuresData = [
   {
     title: "Full Customization:",
@@ -24,7 +22,6 @@ const featuresData = [
   },
 ];
 
-// Варіанти для контейнерів (налаштовуємо каскад)
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -35,7 +32,6 @@ const containerVariants: Variants = {
   },
 };
 
-// Варіанти для елементів (виїзд знизу)
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -48,16 +44,14 @@ const itemVariants: Variants = {
 export const PerformanceSection = () => {
   return (
     <section className="main-container">
-      {/* Головний врапер тепер звичайний div, він не запускає анімацію всієї секції */}
       <div className={styles.sectionWrapper}>
         
-        {/* 1. Вкладений каскад для заголовка */}
         <motion.div 
           className={styles.header}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }} // Текст анімується, коли видно 40% блоку
+          viewport={{ once: true, amount: 0.4 }} 
         >
           <motion.h2 variants={itemVariants} className="typo-section-title text-snow m-0">
             DOMINATOR PLAY:<br />
@@ -73,13 +67,12 @@ export const PerformanceSection = () => {
           </motion.p>
         </motion.div>
 
-        {/* 2. Вкладений каскад для сітки карток */}
         <motion.div 
           className={styles.grid}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }} // Картки починають з'являтись, щойно видно 10% сітки
+          viewport={{ once: true, amount: 0.1 }} 
         >
           {featuresData.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>

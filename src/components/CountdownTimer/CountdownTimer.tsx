@@ -36,7 +36,6 @@ export const CountdownTimer = ({
 
   const pad = (num: number) => num.toString().padStart(2, "0");
 
-  // Спочатку формуємо базовий масив значень
   const timeBlocksRaw = [
     { label: "day", value: timeLeft.days, showColon: false },
     { label: "hour", value: timeLeft.hours, showColon: true },
@@ -44,8 +43,6 @@ export const CountdownTimer = ({
     { label: "seconds", value: timeLeft.seconds, showColon: true },
   ];
 
-  // Проходимось по масиву, щоб визначити, чи почався вже "активний" відлік.
-  // Якщо ми хоча б раз зустріли число > 0, всі наступні блоки стають isActive = true.
   let hasStarted = false;
   const timeBlocks = timeBlocksRaw.map((block) => {
     if (block.value > 0) {
@@ -58,7 +55,6 @@ export const CountdownTimer = ({
   });
 
   return (
-    // Масштабуємо загальний gap: 4px (мобілка) -> 8px (планшет) -> 12px (десктоп)
     <div className="flex items-start justify-center gap-1">
       {timeBlocks.map((block) => {
         const strValue = pad(block.value);
@@ -74,7 +70,6 @@ export const CountdownTimer = ({
         return (
           <div key={block.label} className="flex items-start">
             {block.showColon && (
-              // Масштабуємо відступи навколо двокрапки, щоб вони не були занадто вузькими на десктопі
               <span className={cn("text-snow/70 drop-shadow-md mr-1", styles.fluidNumber)}>
                 :
               </span>
@@ -85,7 +80,6 @@ export const CountdownTimer = ({
               >
                 {strValue}
               </span>
-              {/* Збільшуємо відступ до підпису на більших екранах для кращої пропорції */}
               <span
                 className={cn(
                   "typo-timer-label lowercase mt-1 md:mt-2",

@@ -1,4 +1,3 @@
-// src/components/Cards/FeatureCard/FeatureCard.tsx
 import { cn } from "../../../utils/cn";
 import styles from "./FeatureCard.module.scss";
 

@@ -1,4 +1,3 @@
-// src/components/LangSwitcher/LangSwitcher.tsx
 import { useState, useRef, useEffect } from "react";
 import { cn } from "../../utils/cn";
 import { ChevronIcon } from "../Icons/ChevronIcon";

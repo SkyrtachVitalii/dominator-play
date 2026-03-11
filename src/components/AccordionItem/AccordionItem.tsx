@@ -33,7 +33,6 @@ export const AccordionItem = ({ title, content }: AccordionItemProps) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            {/* Контент акордеону */}
             <div className="px-4 py-4 md:px-6 md:py-6 typo-p-regular text-snow/70">
               {content}
             </div>

@@ -17,29 +17,26 @@ const rightColumnData = [
   { title: "Custom integration", content: "Seamless and fast API integration into any existing platform or aggregator with zero downtime." },
 ];
 
-// 1. Варіанти для всієї секції (запускає загальний каскад)
 const sectionVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Затримка між появою заголовка і колонок
+      staggerChildren: 0.2, 
     },
   },
 };
 
-// 2. Варіанти для окремої колонки (запускає каскад всередині колонки)
 const columnVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Затримка між появою підзаголовка та кожним AccordionItem
+      staggerChildren: 0.15, 
     },
   },
 };
 
-// 3. Варіанти для кожного окремого елемента (виїзд знизу)
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -52,7 +49,6 @@ const itemVariants: Variants = {
 export const WhatSetsUsApart = () => {
   return (
     <section className="main-container">
-      {/* Головний контейнер слухає скрол */}
       <motion.div 
         className={styles.wrapper}
         variants={sectionVariants}
@@ -61,7 +57,6 @@ export const WhatSetsUsApart = () => {
         viewport={{ once: true, amount: 0.1 }}
       >
         
-        {/* Головний заголовок секції */}
         <motion.h2 
           variants={itemVariants}
           className={cn("typo-section-title text-snow", styles.title)}
@@ -71,7 +66,6 @@ export const WhatSetsUsApart = () => {
 
         <div className={styles.grid}>
           
-          {/* Ліва колонка (має власні columnVariants для каскаду всередині) */}
           <motion.div variants={columnVariants} className={styles.column}>
             <motion.h3 variants={itemVariants} className="typo-accordion-title text-snow m-0">
               What makes us different
@@ -88,7 +82,6 @@ export const WhatSetsUsApart = () => {
             </div>
           </motion.div>
 
-          {/* Права колонка (теж запускає свій каскад) */}
           <motion.div variants={columnVariants} className={styles.column}>
             <motion.h3 variants={itemVariants} className="typo-accordion-title text-snow m-0">
               Partner benefits

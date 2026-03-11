@@ -7,18 +7,15 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Головний контейнер з динамічними падінгами */
 .main-container {
   width: 100%;
   max-width: $desktop;
   margin: 0 auto;
   
-  /* Від 120px на десктопі до 16px на мобілці */
   @include fluid("padding-left", 16px, 120px, $min-mobile, $desktop);
   @include fluid("padding-right", 16px, 120px, $min-mobile, $desktop);
 }
 
-/* Для секцій, які потребують вертикальних відступів */
 .section-spacing {
   @include fluid("padding-top", 48px, 96px, $min-mobile, $desktop);
   @include fluid("padding-bottom", 48px, 96px, $min-mobile, $desktop);

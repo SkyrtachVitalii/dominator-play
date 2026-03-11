@@ -5,18 +5,16 @@ import { GameCard } from "../../components/cards/GameCard/GameCard";
 import { CtaCard } from "../../components/cards/CtaCard/CtaCard";
 import styles from "./UpcomingReleases.module.scss";
 
-// Варіанти для контейнера сітки карток (каскад)
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Кожна картка з'являється одна за одною
+      staggerChildren: 0.15,
     },
   },
 };
 
-// Варіанти для карток і заголовка (виїзд знизу)
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -35,29 +33,25 @@ export const UpcomingReleases = () => {
 
   return (
     <section className="main-container">
-      {/* Головний врапер тепер звичайний div, без загальної анімації */}
       <div className={styles.sectionWrapper}>
         
-        {/* 1. Незалежний тригер для заголовка */}
         <motion.h2
           className={cn("typo-section-title text-snow uppercase", styles.title)}
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }} // Спрацює, коли заголовок добре видно
+          viewport={{ once: true, amount: 0.4 }} 
         >
           Upcoming Releases
         </motion.h2>
 
-        {/* 2. Незалежний тригер та каскад для сітки карток */}
         <motion.div 
           className={styles.grid}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }} // Каскад карток почнеться, щойно юзер доскролить до самої сітки
+          viewport={{ once: true, amount: 0.1 }} 
         >
-          {/* Картки залишаються загорнутими в motion.div */}
           <motion.div variants={itemVariants}>
             <ReleaseTimerCard
               startDate={startDate}
