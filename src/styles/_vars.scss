@@ -1,0 +1,11 @@
+$desktop: 1920px;
+$tablet: 1024px;
+$mobile: 768px;
+$min-mobile: 360px;
+
+$gradient-neon-glow: radial-gradient(
+  ellipse 125% 140% at -4% -5%,
+  rgba(243, 63, 127, 1) 0%,
+  rgba(243, 63, 127, 0.4) 35%,
+  rgba(90, 31, 51, 0) 100%
+);

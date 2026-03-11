@@ -1,0 +1,11 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.wrapper {
+  @include fluid("padding-bottom", 64px, 120px, $min-mobile, $desktop);
+
+}
+
+.title {
+  @include fluid("margin-bottom", 40px, 60px, $min-mobile, $desktop);
+}

@@ -1,0 +1,31 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+
+  @include fluid("padding-top", 32px, 120px, $min-mobile, $desktop);
+  @include fluid("padding-bottom", 24px, 110px, $min-mobile, $desktop);
+  @include fluid("padding-inline", 24px, 138px, $min-mobile, $desktop);
+  @include fluid("margin-top", 24px, 60px, $min-mobile, $desktop);
+  @include fluid("margin-bottom", 40px, 120px, $min-mobile, $desktop);
+
+  background: $gradient-neon-glow;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include fluid("gap", 24px, 40px, $min-mobile, $desktop);
+
+  max-width: 988px;
+  max-height: 476px;
+}
+
+.description {
+  opacity: 0.95;
+  max-width: 970px;
+}

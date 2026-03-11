@@ -1,0 +1,20 @@
+// src/components/Logo/HeaderLogo.module.scss
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.logoWrapper {
+  @include fluid("width", 123px, 344px, $min-mobile, $desktop);
+  @include fluid("height", 20px, 56px, $min-mobile, $desktop);
+  max-width: 344px;
+  max-height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

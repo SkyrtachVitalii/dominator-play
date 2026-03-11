@@ -1,0 +1,41 @@
+@use "sass:math";
+@use "sass:meta";
+@use "vars" as *;
+
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+@mixin fluid($prop, $min-value, $max-value, $min-vw, $max-vw) {
+  $u-min-vw: strip-unit($min-vw);
+  $u-max-vw: strip-unit($max-vw);
+  $u-min-val: strip-unit($min-value);
+  $u-max-val: strip-unit($max-value);
+
+  #{$prop}: clamp($min-value, calc(
+    #{$min-value} + (#{$u-max-val} - #{$u-min-val}) *
+      ((100vw - #{$min-vw}) / (#{$u-max-vw} - #{$u-min-vw}))
+  ), $max-value);
+}
+
+@mixin typography($d-size, $d-lh, $t-size, $t-lh, $m-size, $m-lh) {
+  font-size: $d-size;
+  line-height: $d-lh;
+
+  @media (max-width: $desktop) {
+    @include fluid("font-size", $t-size, $d-size, $tablet, $desktop);
+    @include fluid("line-height", $t-lh, $d-lh, $tablet, $desktop);
+  }
+  @media (max-width: $tablet) {
+    @include fluid("font-size", $m-size, $t-size, $min-mobile, $tablet);
+    @include fluid("line-height", $m-lh, $t-lh, $min-mobile, $tablet);
+  }
+
+  @media (max-width: $mobile) {
+    @include fluid("font-size", $m-size, $t-size, $min-mobile, $mobile);
+    @include fluid("line-height", $m-lh, $t-lh, $min-mobile, $mobile);
+  }
+}

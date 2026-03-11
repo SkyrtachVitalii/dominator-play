@@ -1,0 +1,136 @@
+@use "mixins" as *;
+
+/* inter-regular - cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-cyrillic-ext_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-500 - cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-cyrillic-ext_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-600 - cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-cyrillic-ext_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-700 - cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v20-cyrillic-ext_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-900 - cyrillic-ext_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/inter-v20-cyrillic-ext_latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* Section Titles */
+.typo-section-title {
+  @include typography(80px, 80px, 56px, 56px, 40px, 42px);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Paragraphs */
+.typo-p-large {
+  @include typography(32px, 32px, 24px, 26px, 18px, 22px);
+  font-weight: 500;
+}
+.typo-p-regular {
+  @include typography(24px, 26px, 20px, 24px, 16px, 20px);
+  font-weight: 400;
+}
+
+/* Cards */
+.typo-card-title-lg {
+  @include typography(42px, 42px, 32px, 32px, 24px, 24px);
+  font-weight: 700;
+}
+.typo-card-title-sm {
+  @include typography(18px, 16px, 16px, 16px, 14px, 14px);
+  font-weight: 700;
+}
+.typo-card-desc {
+  @include typography(24px, 24px, 18px, 20px, 16px, 18px);
+  font-weight: 400;
+}
+
+/* Timers */
+.typo-timer-num {
+  @include typography(60px, 80px, 48px, 56px, 36px, 40px);
+  font-weight: 700;
+}
+.typo-timer-label {
+  @include typography(16px, 16px, 14px, 14px, 12px, 12px);
+  font-weight: 700;
+}
+
+/* Accordion */
+.typo-accordion-title {
+  @include typography(48px, 48px, 36px, 36px, 28px, 28px);
+  font-weight: 700;
+}
+.typo-accordion-item {
+  @include typography(24px, 24px, 20px, 20px, 16px, 16px);
+  font-weight: 500;
+}
+
+/* UI Elements */
+.typo-btn {
+  @include typography(18px, 16px, 16px, 16px, 16px, 16px);
+}
+.typo-nav {
+  @include typography(16px, 16px, 14px, 14px, 14px, 14px);
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.typo-small-title {
+  @include typography(34px, 34px, 24px, 24px, 18px, 18px);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.typo-big-title {
+  @include typography(60px, 90px, 40px, 60px, 32px, 48px);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.typo-footer-title {
+  @include typography(14px, 16px, 14px, 16px, 14px, 16px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.typo-footer-link {
+  @include typography(14px, 16px, 14px, 16px, 12px, 14px);
+  font-weight: 400;
+}
+.typo-footer-legal {
+  @include typography(16px, 16px, 14px, 14px, 12px, 14px);
+  font-weight: 500;
+}

@@ -1,0 +1,22 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.fluidNumber {
+  @include fluid("font-size", 32px, 60px, $tablet, $desktop);
+  @media (width < $tablet) {
+    @include fluid("font-size", 32px, 60px, $mobile, $tablet);
+  }
+  @media (width < $mobile) {
+    @include fluid("font-size", 40px, 60px, $min-mobile, $mobile);
+  }
+}
+
+.fluidSubtitle {
+  @include fluid("font-size", 8px, 16px, $tablet, $desktop);
+  @media (width < $tablet) {
+    @include fluid("font-size", 8px, 16px, $mobile, $tablet);
+  }
+  @media (width < $mobile) {
+    @include fluid("font-size", 8px, 16px, $min-mobile, $mobile);
+  }
+}

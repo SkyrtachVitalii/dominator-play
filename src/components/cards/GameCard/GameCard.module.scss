@@ -1,0 +1,25 @@
+.cardBase {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 544 / 602; /* Робить картки ідеально квадратними */
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: var(--color-dark-purple);
+
+  &:hover {
+    transform: translateY(-4px); /* Підняття при наведенні */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}
+
+.gameCard {
+  .gameImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

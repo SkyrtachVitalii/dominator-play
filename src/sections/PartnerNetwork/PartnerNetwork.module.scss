@@ -1,0 +1,15 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include fluid("padding-bottom", 64px, 120px, $min-mobile, $desktop);
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  @include fluid("margin-bottom", 40px, 60px, $min-mobile, $desktop);
+}

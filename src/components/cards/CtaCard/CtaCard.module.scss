@@ -1,0 +1,31 @@
+@use "../../../styles/vars" as *;
+@use "../../../styles/mixins" as *;
+
+.cardBase {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 544 / 602; /* Робить картки ідеально квадратними */
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: var(--color-dark-purple);
+
+  &:hover {
+    transform: translateY(-4px); /* Підняття при наведенні */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+}
+
+.ctaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  @include fluid("padding", 20px, 40px, $min-mobile, $desktop);
+  gap: 32px;
+  background: $gradient-neon-glow;
+}

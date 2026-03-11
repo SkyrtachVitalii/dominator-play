@@ -1,0 +1,23 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.containerCta {
+  @include fluid("padding-bottom", 48px, 150px, $min-mobile, $desktop);
+}
+
+.wrapper {
+  // Використовуємо заготовлений градієнт для фону
+  background: $gradient-neon-glow;
+  
+  // Плавні внутрішні відступи блоку
+  @include fluid("padding-top", 48px, 108px, $min-mobile, $desktop);
+  @include fluid("padding-bottom", 48px, 100px, $min-mobile, $desktop);
+  @include fluid("padding-left", 16px, 64px, $min-mobile, $desktop);
+  @include fluid("padding-right", 16px, 64px, $min-mobile, $desktop);
+
+  @include fluid("height", 330px, 546px, $min-mobile, $desktop);
+
+  @media (max-width: $tablet) {
+    height: auto;
+  }
+}

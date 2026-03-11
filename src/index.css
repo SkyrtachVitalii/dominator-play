@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-dark-purple: #1A0A12;
+  --color-plum: #492035;
+  --color-bordeaux: #5A1F33;
+  --color-neon-pink: #FF4F8B;
+  --color-light-pink: #F6C1D1;
+  --color-snow: #FFEDED;
+  --main-bg: linear-gradient(0deg, #1A0A12, #1A0A12);
+
+  --font-sans: "Inter", sans-serif;
+}
+
+
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: Inter, system-ui, sans-serif;
+  }
+}

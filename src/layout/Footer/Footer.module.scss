@@ -1,0 +1,7 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.wrapper {
+  // Плавний внутрішній відступ зверху в залежності від розміру екрана
+  @include fluid("padding-top", 40px, 80px, $min-mobile, $desktop);
+}

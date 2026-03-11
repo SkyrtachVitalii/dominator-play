@@ -1,0 +1,26 @@
+@use "../../../styles/vars" as *;
+@use "../../../styles/mixins" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  @include fluid("min-height", 192px, 336px, $min-mobile, $desktop);
+  @include fluid("padding", 16px, 40px, $min-mobile, $desktop);
+  
+  background: $gradient-neon-glow;
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 79, 139, 0.3);
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  @include fluid("gap", 16px, 40px, $min-mobile, $desktop);
+}

@@ -1,0 +1,10 @@
+@use "../../styles/vars" as *;
+@use "../../styles/mixins" as *;
+
+.headerWrapper {
+  @include fluid("margin-top", 16px, 47px, $min-mobile, $desktop);
+  @include fluid("padding-block", 8px, 24px, $min-mobile, $desktop);
+  max-height: 104px;
+  position: relative;
+  z-index: 50;
+}
