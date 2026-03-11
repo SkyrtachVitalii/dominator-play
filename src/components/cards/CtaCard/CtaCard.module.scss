@@ -26,6 +26,6 @@
   justify-content: center;
   text-align: center;
   @include fluid("padding", 20px, 40px, $min-mobile, $desktop);
-  gap: 32px;
+  gap: 60px;
   background: $gradient-neon-glow;
 }

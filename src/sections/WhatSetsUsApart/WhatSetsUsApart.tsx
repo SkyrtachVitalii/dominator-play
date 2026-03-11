@@ -1,3 +1,4 @@
+import { motion, type Variants } from "framer-motion";
 import { cn } from "../../utils/cn";
 import styles from "./WhatSetsUsApart.module.scss";
 import { AccordionItem } from "../../components/AccordionItem/AccordionItem";
@@ -16,48 +17,96 @@ const rightColumnData = [
   { title: "Custom integration", content: "Seamless and fast API integration into any existing platform or aggregator with zero downtime." },
 ];
 
+// 1. Варіанти для всієї секції (запускає загальний каскад)
+const sectionVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Затримка між появою заголовка і колонок
+    },
+  },
+};
+
+// 2. Варіанти для окремої колонки (запускає каскад всередині колонки)
+const columnVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Затримка між появою підзаголовка та кожним AccordionItem
+    },
+  },
+};
+
+// 3. Варіанти для кожного окремого елемента (виїзд знизу)
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
+
 export const WhatSetsUsApart = () => {
   return (
     <section className="main-container">
-      <div className={styles.wrapper}>
+      {/* Головний контейнер слухає скрол */}
+      <motion.div 
+        className={styles.wrapper}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         
-        <h2 className={cn("typo-section-title text-snow", styles.title)}>
+        {/* Головний заголовок секції */}
+        <motion.h2 
+          variants={itemVariants}
+          className={cn("typo-section-title text-snow", styles.title)}
+        >
           What sets us apart
-        </h2>
+        </motion.h2>
 
         <div className={styles.grid}>
-          <div className={styles.column}>
-            <h3 className="typo-accordion-title text-snow m-0">
+          
+          {/* Ліва колонка (має власні columnVariants для каскаду всередині) */}
+          <motion.div variants={columnVariants} className={styles.column}>
+            <motion.h3 variants={itemVariants} className="typo-accordion-title text-snow m-0">
               What makes us different
-            </h3>
+            </motion.h3>
             <div className={styles.accordionList}>
               {leftColumnData.map((item, idx) => (
-                <AccordionItem 
-                  key={`left-${idx}`} 
-                  title={item.title} 
-                  content={item.content} 
-                />
+                <motion.div key={`left-${idx}`} variants={itemVariants}>
+                  <AccordionItem 
+                    title={item.title} 
+                    content={item.content} 
+                  />
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.column}>
-            <h3 className="typo-accordion-title text-snow m-0">
+          {/* Права колонка (теж запускає свій каскад) */}
+          <motion.div variants={columnVariants} className={styles.column}>
+            <motion.h3 variants={itemVariants} className="typo-accordion-title text-snow m-0">
               Partner benefits
-            </h3>
+            </motion.h3>
             <div className={styles.accordionList}>
               {rightColumnData.map((item, idx) => (
-                <AccordionItem 
-                  key={`right-${idx}`} 
-                  title={item.title} 
-                  content={item.content} 
-                />
+                <motion.div key={`right-${idx}`} variants={itemVariants}>
+                  <AccordionItem 
+                    title={item.title} 
+                    content={item.content} 
+                  />
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
+
         </div>
-        
-      </div>
+      </motion.div>
     </section>
   );
 };
